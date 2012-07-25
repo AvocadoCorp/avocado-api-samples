@@ -1,3 +1,19 @@
+/**
+ * This is a script written for Node.js. For best results, run this from the command line.
+ *
+ * Run:
+ * node AvocadoSignTest.js
+ *
+ * Then answer the following...
+ *    Email of an Avocado account:
+ *    Password:
+ *    Developer ID:
+ *    Developer key:
+ *
+ * If successful, you'll see your developer signature...
+ *    1:crazylongweirdlookinghashedstring
+ */
+
 'use strict';
 
 var crypto = require('crypto');

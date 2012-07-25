@@ -43,7 +43,7 @@ fi
 
 # DONE. But...
 #-----------------------------------------------------------------------------------------
-# TODO: Allow passing an API path as an option to test that API call. (GET requests only.)
+# Allow passing an API path as an option to test that API call. (GET requests only.)
 #-----------------------------------------------------------------------------------------
 if [ -n "$1" ]; then
   # Call the Avocado API

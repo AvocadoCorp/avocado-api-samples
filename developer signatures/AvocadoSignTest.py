@@ -1,3 +1,16 @@
+# For best results, run this from the command line.
+#
+# Run:
+# python AvocadoSignTest.py
+#
+# Then answer the following...
+#    Email of an Avocado account:
+#    Password:
+#    Developer ID:
+#    Developer key:
+#
+# If successful, you'll see your developer signature...
+#    1:crazylongweirdlookinghashedstring
 
 import cookielib
 import getpass

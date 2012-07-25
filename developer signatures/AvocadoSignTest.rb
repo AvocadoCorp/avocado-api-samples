@@ -1,5 +1,19 @@
 #!/usr/bin/env ruby
 
+# For best results, run this from the command line.
+#
+# Run:
+# ruby AvocadoSignTest.rb
+#
+# Then answer the following...
+#    Email of an Avocado account:
+#    Password:
+#    Developer ID:
+#    Developer key:
+#
+# If successful, you'll see your developer signature...
+#    1:crazylongweirdlookinghashedstring
+
 require 'cgi'
 require 'digest'
 require 'net/http'

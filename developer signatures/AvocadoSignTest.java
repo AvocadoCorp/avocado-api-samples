@@ -1,3 +1,18 @@
+/**
+ * For best results, run this from the command line.
+ *
+ * Run:
+ * javac AvocadoSignTest.java; java AvocadoSignTest
+ *
+ * Then answer the following...
+ *    Email of an Avocado account:
+ *    Password:
+ *    Developer ID:
+ *    Developer key:
+ *
+ * If successful, you'll see your developer signature...
+ *    1:crazylongweirdlookinghashedstring
+ */
 
 import java.io.BufferedReader;
 import java.io.Console;
@@ -15,7 +30,7 @@ import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class DeveloperSignatureGenerator {
+public class AvocadoSignTest {
   static final String API_URL_BASE = "https://avocado.io/api/";
   static final String API_URL_LOGIN = API_URL_BASE + "authentication/login";
   static final String API_URL_COUPLE = API_URL_BASE + "couple";
@@ -24,7 +39,7 @@ public class DeveloperSignatureGenerator {
   static final String ERROR_MSG = "\nFAILED.  Signature was tested and failed. " +
       "Try again and check the auth information.";
 
-  public DeveloperSignatureGenerator() {}
+  public AvocadoSignTest() {}
 
   public class AvocadoAPI {
     private final AuthClient authClient;
@@ -202,7 +217,7 @@ public class DeveloperSignatureGenerator {
 
     public void updateFromCommandLine() {
       Console c = System.console();
-      this.email = c.readLine("Enter of an Avocado account: ");
+      this.email = c.readLine("Email of an Avocado account: ");
       this.password = c.readPassword("Password: ");
       this.devId = Integer.parseInt(c.readLine("Developer ID: "));
       this.devKey = c.readLine("Developer key: ");
@@ -225,9 +240,9 @@ public class DeveloperSignatureGenerator {
   }
 
   public static void main(String[] args) {
-    DeveloperSignatureGenerator dsg = new DeveloperSignatureGenerator();
-    DeveloperSignatureGenerator.AuthClient authClient = dsg.new AuthClient();
-    DeveloperSignatureGenerator.AvocadoAPI api = dsg.new AvocadoAPI(authClient);
+    AvocadoSignTest signTest = new AvocadoSignTest();
+    AvocadoSignTest.AuthClient authClient = signTest.new AuthClient();
+    AvocadoSignTest.AvocadoAPI api = signTest.new AvocadoAPI(authClient);
     api.updateFromCommandLine();
   }
 }

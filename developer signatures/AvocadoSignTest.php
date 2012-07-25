@@ -1,4 +1,19 @@
 <?php
+/**
+ * For best results, run this from the command line.
+ *
+ * Run:
+ * php AvocadoSignTest.php
+ *
+ * Then answer the following...
+ *    Email of an Avocado account:
+ *    Password:
+ *    Developer ID:
+ *    Developer key:
+ *
+ * If successful, you'll see your developer signature...
+ *    1:crazylongweirdlookinghashedstring
+ */
 
 define("_AVOCADO_API_URL_BASE", "https://avocado.io/api/");
 define("_AVOCADO_API_URL_LOGIN", _AVOCADO_API_URL_BASE . "authentication/login");
