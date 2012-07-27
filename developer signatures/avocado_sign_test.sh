@@ -13,7 +13,7 @@ read -p "Developer key: " DEV_KEY
 ENCODED_EMAIL=$(python -c "import urllib; print urllib.quote('''$EMAIL''')")
 
 # Login and get the cookie
-COOKIE_VALUE=`curl -d "email=$ENCODED_EMAIL&password=$PASS" -v https://avocado.io/api/authentication/login 2>&1 | grep -Po 'user_email=(.*)?' | sed 's/user_email=\(.*\);\(.*\)/\1/'`
+COOKIE_VALUE=`curl -d "email=$ENCODED_EMAIL&password=$PASS" -v https://avocado.io/api/authentication/login 2>&1 | grep -e '.*user_email=.*' | sed 's/\(.*\)user_email=\(.*\);\(.*\)/\2/'`
 
 # Make a user token with the cookie and the developer's key
 USER_TOKEN=$COOKIE_VALUE$DEV_KEY
