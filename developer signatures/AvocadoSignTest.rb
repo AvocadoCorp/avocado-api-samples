@@ -55,9 +55,9 @@ class AvocadoAPI
     connection = Net::HTTP::new($AVOCADO_API_HOST, $AVOCADO_API_PORT)
     connection.verify_mode = OpenSSL::SSL::VERIFY_NONE
     connection.use_ssl = true
-    resp, data = connection.get($AVOCADO_API_URL_COUPLE, get_signed_headers)
+    resp = connection.get($AVOCADO_API_URL_COUPLE, get_signed_headers)
     if resp.code == "200"
-      @couple = data
+      @couple = resp.body
     end
   end
 
